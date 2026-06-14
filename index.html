@@ -295,6 +295,29 @@ footer nav a:hover{color:var(--amber)}
 </head>
 <body>
 
+<!-- SUMMER BANNER -->
+<div id="summer-banner" style="
+  background:#E8971A;
+  color:#1C2B1E;
+  text-align:center;
+  padding:10px 20px;
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  position:relative;
+  z-index:400;
+">
+  ⚡ Summer Launch Special — First 10 Clients Only · Ends August 31
+  <button onclick="document.getElementById('summer-banner').style.display='none'" style="
+    position:absolute;right:16px;top:50%;transform:translateY(-50%);
+    background:none;border:none;cursor:pointer;
+    font-size:1rem;color:#1C2B1E;opacity:0.6;font-weight:700;
+    padding:0 4px;
+  ">✕</button>
+</div>
+
 <nav id="nav">
   <a href="#" class="logo">Mountain Web<em> Co.</em></a>
   <div class="nav-r">
@@ -388,7 +411,11 @@ footer nav a:hover{color:var(--amber)}
     <div class="pc-grid">
       <div class="pc std">
         <div class="pn">Option A — Own It Outright</div>
-        <div class="pa"><sup>$</sup>497</div>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px;">
+          <div class="pa"><sup>$</sup>397</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--mist);text-decoration:line-through;opacity:0.5;">$497</div>
+        </div>
+        <div style="display:inline-block;background:rgba(232,151,26,0.12);border:1px solid rgba(232,151,26,0.3);border-radius:3px;padding:3px 10px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8971A;margin-bottom:8px;">Summer Special — Ends Aug 31</div>
         <div class="pnt">One-time · you own everything · ~$15/yr domain renewal after year 1</div>
         <div class="pdiv"></div>
         <ul class="pl">
@@ -405,7 +432,11 @@ footer nav a:hover{color:var(--amber)}
       <div class="pc feat">
         <div class="hbadge">Most Popular</div>
         <div class="pn">Option B — Launch + Growth</div>
-        <div class="pa"><sup>$</sup>197</div>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px;">
+          <div class="pa"><sup>$</sup>97</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">$197</div>
+        </div>
+        <div style="display:inline-block;background:rgba(232,151,26,0.2);border:1px solid rgba(232,151,26,0.4);border-radius:3px;padding:3px 10px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8971A;margin-bottom:8px;">Summer Special — Ends Aug 31</div>
         <div class="pnt">Upfront · then $49/month · 3-month minimum · cancel anytime after</div>
         <div class="pdiv"></div>
         <ul class="pl">
