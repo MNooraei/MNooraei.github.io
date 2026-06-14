@@ -453,10 +453,7 @@ footer nav a:hover{color:var(--amber)}
 
 <footer>
   <div class="flogo">Mountain Web<span> Co.</span></div>
-  <nav>
-    <a href="#how">Process</a><a href="#about">About</a>
-    <a href="#pricing">Pricing</a><a href="#contact">Contact</a>
-  </nav>
+  
   <p>© 2025 Mountain Web Co. · Fletcher, NC · Serving Buncombe &amp; Henderson Counties</p>
 </footer>
 
@@ -480,7 +477,7 @@ async function sf(){
   btn.textContent='Sending...';
   btn.disabled=true;
   try{
-    var res=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
+    var res=await fetch('https://formspree.io/f/xbdeqleb',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
