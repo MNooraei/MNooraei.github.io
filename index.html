@@ -141,31 +141,38 @@ h1.hh .amb{color:var(--amber)}
 .dic{width:40px;height:40px;border-radius:8px;background:#EDEAE0;border:1px solid #D8D3C8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;box-shadow:0 2px 6px rgba(0,0,0,.07)}
 
 /* PRICING */
-.pricing{background:var(--white);padding:96px 52px;border-top:1px solid var(--border)}
-.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
-.pc{border-radius:12px;padding:44px 40px;position:relative;overflow:hidden}
-.pc.std{background:#FAFAF7;border:1px solid #D0CBB8;box-shadow:0 2px 4px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.07)}
-.pc.feat{background:#1C2B1E;border:none;box-shadow:0 4px 8px rgba(0,0,0,.15),0 16px 48px rgba(0,0,0,.25)}
-.pc.feat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(245,166,35,.1) 0%,transparent 55%);pointer-events:none}
-.hbadge{position:absolute;top:22px;right:22px;background:var(--amber);color:var(--navy);font-size:.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:2px}
-.pn{font-size:.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mist);margin-bottom:18px}
-.pc.feat .pn{color:rgba(255,255,255,.3)}
-.pa{font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:var(--ink);margin-bottom:2px}
-.pa sup{font-size:2.2rem}
-.pc.feat .pa{color:var(--amber)}
+.pricing{background:#F4F2EC;padding:96px 52px;border-top:1px solid var(--border)}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px;align-items:start}
+.pc{border-radius:16px;padding:48px 44px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.pc:hover{transform:translateY(-5px)}
+.pc.std{background:#FFFFFF;border:1.5px solid #C8C2B0;box-shadow:0 4px 6px rgba(0,0,0,.05),0 12px 32px rgba(0,0,0,.1)}
+.pc.std:hover{box-shadow:0 8px 12px rgba(0,0,0,.07),0 24px 48px rgba(0,0,0,.13)}
+.pc.feat{background:#162618;border:2px solid rgba(245,166,35,.35);box-shadow:0 8px 16px rgba(0,0,0,.2),0 24px 64px rgba(0,0,0,.35),0 0 0 1px rgba(245,166,35,.08)}
+.pc.feat:hover{box-shadow:0 12px 24px rgba(0,0,0,.25),0 32px 80px rgba(0,0,0,.4),0 0 40px rgba(245,166,35,.12)}
+.pc.feat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(245,166,35,.15) 0%,transparent 55%);pointer-events:none}
+.pc.feat::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(245,166,35,0),var(--amber),rgba(245,166,35,0))}
+.hbadge{position:absolute;top:22px;right:22px;background:var(--amber);color:#111;font-size:.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;border-radius:3px;box-shadow:0 2px 8px rgba(245,166,35,.4)}
+.pn{font-size:.82rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.pc.feat .pn{color:rgba(255,255,255,.9)}
+.pdesc{font-size:.88rem;color:var(--slate);line-height:1.6;margin-bottom:20px}
+.pc.feat .pdesc{color:rgba(255,255,255,.55)}
+.pa{font-family:'Bebas Neue',sans-serif;font-size:5.5rem;line-height:1;color:var(--ink);margin-bottom:2px}
+.pa sup{font-size:2.4rem}
+.pc.feat .pa{color:var(--amber);text-shadow:0 0 40px rgba(245,166,35,.3)}
 .pnt{font-size:.8rem;color:var(--slate);margin-bottom:30px}
-.pc.feat .pnt{color:rgba(255,255,255,.38)}
-.pdiv{height:1px;background:var(--border);margin-bottom:28px}
-.pc.feat .pdiv{background:rgba(255,255,255,.1)}
-.pl{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
-.pl li{display:flex;align-items:flex-start;gap:12px;font-size:.875rem;color:var(--slate);line-height:1.5}
-.pc.feat .pl li{color:rgba(255,255,255,.62)}
-.ck{width:18px;height:18px;border-radius:50%;background:rgba(14,203,129,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:.58rem;color:var(--green);font-weight:900}
-.pc.feat .ck{background:rgba(245,166,35,.15);color:var(--amber)}
-.btn-std{display:block;text-align:center;border:2px solid var(--ink);color:var(--ink);padding:14px;border-radius:5px;font-weight:700;font-size:.875rem;text-decoration:none;transition:background .2s,color .2s}
-.btn-std:hover{background:var(--ink);color:white}
-.btn-feat{display:block;text-align:center;background:var(--amber);color:var(--navy);padding:14px;border-radius:5px;font-weight:800;font-size:.875rem;text-decoration:none;transition:background .2s}
-.btn-feat:hover{background:var(--amber2)}
+.pc.feat .pnt{color:rgba(255,255,255,.4)}
+.pdiv{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin-bottom:28px}
+.pc.feat .pdiv{background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
+.pl-headline{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.4}
+.pl{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.pl li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:var(--slate);line-height:1.5}
+.pc.feat .pl li{color:rgba(255,255,255,.7)}
+.ck{width:20px;height:20px;border-radius:50%;background:rgba(14,203,129,.12);border:1px solid rgba(14,203,129,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:.58rem;color:var(--green);font-weight:900}
+.pc.feat .ck{background:rgba(245,166,35,.18);border:1px solid rgba(245,166,35,.3);color:var(--amber)}
+.btn-std{display:block;text-align:center;border:2px solid var(--ink);color:var(--ink);padding:15px;border-radius:7px;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;letter-spacing:.5px}
+.btn-std:hover{background:var(--ink);color:white;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.btn-feat{display:block;text-align:center;background:var(--amber);color:#111;padding:15px;border-radius:7px;font-weight:800;font-size:.9rem;text-decoration:none;transition:all .2s;letter-spacing:.5px;box-shadow:0 2px 0 #9A5E08,0 4px 20px rgba(232,151,26,.4)}
+.btn-feat:hover{background:#F0A820;transform:translateY(-2px);box-shadow:0 4px 4px #9A5E08,0 8px 28px rgba(232,151,26,.5)}
 
 /* PORTFOLIO */
 .portfolio{background:var(--off);padding:96px 52px;border-top:1px solid var(--border)}
@@ -343,7 +350,7 @@ footer nav a:hover{color:var(--amber)}
       <h1 class="hh">
         Your Business Deserves<br>to Be <span class="amb">Found.</span>
       </h1>
-      <p class="hero-p">I build professional websites for small businesses across Buncombe and Henderson Counties. Custom-designed, launched in days, and priced so one new customer pays for the whole thing.</p>
+      <p class="hero-p">You've built something great. Five-star reviews, loyal customers — but no website. Mountain Web Co. builds fast, professional sites for WNC small businesses, starting the same week.</p>
       <div class="acts">
         <a href="#contact" class="btn-a">
           <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -406,17 +413,18 @@ footer nav a:hover{color:var(--amber)}
   <div class="mw">
     <p class="ey">Pricing</p>
     <h2 class="st">Two Options.<br>Zero Surprises.</h2>
-    <p class="ss">Both packages include a custom site, your own domain, and full Google Business Profile setup. One new customer pays for the whole thing.</p>
+    <p class="ss">No effort needed on your end — Mountain Web Co. builds your site using your Google reviews and existing information. You can send photos or additional details anytime, but you don't have to.</p>
     <div class="pc-grid">
       <div class="pc std">
-        <div class="pn">Option A — Own It Outright</div>
+        <div class="pn">Option A — One &amp; Done</div>
+        <div class="pdesc">One payment. Your site is built, launched, and yours to keep. Just pay about $15 a year to own the site.</div>
         <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px;">
           <div class="pa"><sup>$</sup>397</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--mist);text-decoration:line-through;opacity:0.5;">$497</div>
         </div>
         <div style="display:inline-block;background:rgba(232,151,26,0.12);border:1px solid rgba(232,151,26,0.3);border-radius:3px;padding:3px 10px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8971A;margin-bottom:8px;">Summer Special — Ends Aug 31</div>
-        <div class="pnt">One-time · you own everything · ~$15/yr domain renewal after year 1</div>
         <div class="pdiv"></div>
+        <div class="pl-headline">Your site. Built, launched, and yours.</div>
         <ul class="pl">
           <li><span class="ck">✓</span>Custom-designed website built for your business</li>
           <li><span class="ck">✓</span>Your own domain name (YourBusiness.com)</li>
@@ -430,22 +438,23 @@ footer nav a:hover{color:var(--amber)}
       </div>
       <div class="pc feat">
         <div class="hbadge">Most Popular</div>
-        <div class="pn">Option B — Launch + Growth</div>
+        <div class="pn">Option B — We Handle Everything</div>
+        <div class="pdesc">Your site stays fresh and optimized every month — zero work on your end.</div>
         <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px;">
           <div class="pa"><sup>$</sup>97</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">$197</div>
         </div>
         <div style="display:inline-block;background:rgba(232,151,26,0.2);border:1px solid rgba(232,151,26,0.4);border-radius:3px;padding:3px 10px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8971A;margin-bottom:8px;">Summer Special — Ends Aug 31</div>
-        <div class="pnt">Upfront · then $49/month · 3-month minimum · cancel anytime after</div>
         <div class="pdiv"></div>
+        <div class="pl-headline" style="color:rgba(255,255,255,.9)">Your site. Maintained, updated, and growing — every month.</div>
         <ul class="pl">
           <li><span class="ck">✓</span>Everything in Option A</li>
-          <li><span class="ck">✓</span>I manage all hosting &amp; domain renewal</li>
+          <li><span class="ck">✓</span>Mountain Web Co. manages all hosting &amp; domain renewal</li>
           <li><span class="ck">✓</span>Monthly Google Business Profile post</li>
           <li><span class="ck">✓</span>Unlimited content updates anytime</li>
           <li><span class="ck">✓</span>Monthly site health check</li>
           <li><span class="ck">✓</span>Ongoing local SEO improvements</li>
-          <li><span class="ck">✓</span>Text me directly — I pick up</li>
+          <li><span class="ck">✓</span>Text Mountain Web Co. directly — always a real person</li>
         </ul>
         <a href="#contact" class="btn-feat">Get Started — $197 Upfront</a>
       </div>
