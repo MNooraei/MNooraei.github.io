@@ -288,15 +288,43 @@ footer nav{display:flex;gap:24px}
 footer nav a{font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
 footer nav a:hover{color:var(--amber)}
 
+/* HAMBURGER */
+.ham{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;z-index:400}
+.ham span{display:block;height:2px;background:var(--amber);border-radius:2px;transition:all .3s ease}
+.ham.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(28,43,30,0.98);z-index:350;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.mob-menu.open{display:flex}
+.mob-menu a{color:rgba(255,255,255,.7);text-decoration:none;font-size:1.4rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+.mob-menu a:hover{color:var(--amber)}
+.mob-cta{background:#E8971A!important;color:#1C2B1E!important;padding:14px 36px!important;border-radius:5px;font-weight:700!important}
+
 @media(max-width:900px){
-  nav{padding:14px 20px}nav.up{padding:12px 20px}
+  nav{padding:14px 20px}
+  nav.up{padding:12px 20px}
   .nav-r a:not(.nav-cta){display:none}
+  .ham{display:flex}
   .hero-inner{grid-template-columns:1fr;padding:120px 20px 60px}
   .how,.about,.pricing,.portfolio,.contact{padding:64px 20px}
   .how-grid,.ab-grid,.pc-grid,.contact-inner{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .trust{padding:16px 20px;gap:20px}
   footer{padding:28px 20px;flex-direction:column;text-align:center}
+}
+
+@media(max-width:480px){
+  .hh{font-size:2.6rem;line-height:1.1}
+  .st{font-size:1.8rem}
+  .hero-p{font-size:.95rem}
+  .trust{flex-direction:column;gap:12px;align-items:flex-start}
+  .tr-i{font-size:.72rem}
+  .nav-r .nav-cta{display:none}
+  .pricing-card{padding:28px 20px}
+  .btn-a,.btn-b{width:100%;text-align:center}
+  .acts{flex-direction:column;gap:12px}
 }
 </style>
 </head>
@@ -332,7 +360,17 @@ footer nav a:hover{color:var(--amber)}
     <a href="#pricing">Pricing</a>
     <a href="#contact" class="nav-cta">Get Started</a>
   </div>
+  <button class="ham" id="ham" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <a href="#how" onclick="closeMenu()">Process</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#contact" class="mob-cta" onclick="closeMenu()">Get Started</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -614,6 +652,18 @@ window.addEventListener('scroll',()=>{
   secs.forEach(s=>{if(scrollY>=s.offsetTop-150)cur=s.id});
   lks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'#F5A623':''});
 });
+function toggleMenu(){
+  const ham=document.getElementById('ham');
+  const menu=document.getElementById('mob-menu');
+  ham.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mob-menu').classList.remove('open');
+  document.body.style.overflow='';
+}
 function updateNavOffset(){
   const banner=document.getElementById('summer-banner');
   const nav=document.getElementById('nav');
