@@ -313,11 +313,11 @@ footer nav a:hover{color:var(--amber)}
   font-weight:700;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  position:relative;
-  z-index:400;
+  position:fixed;top:0;left:0;right:0;
+  z-index:500;
 ">
   ⚡ Summer Launch Special. First 10 Clients Only · Ends August 31
-  <button onclick="document.getElementById('summer-banner').style.display='none'" style="
+  <button onclick="dismissBanner()" style="
     position:absolute;right:16px;top:50%;transform:translateY(-50%);
     background:none;border:none;cursor:pointer;
     font-size:1rem;color:#1C2B1E;opacity:0.6;font-weight:700;
@@ -380,20 +380,20 @@ footer nav a:hover{color:var(--amber)}
       <div class="hw">
         <div class="dtag">Day 1</div>
         <div class="sn">01</div>
-        <h3>I show up with your site already built</h3>
-        <p>I research your business, build a working version, and walk you through it in person. You see exactly what you're getting before spending a single dollar.</p>
+        <h3>You see your site before we discuss anything.</h3>
+        <p>I research your business and build a working version before we meet. You walk in, see it, and decide. No pitch. No pressure. No commitment.</p>
       </div>
       <div class="hw">
         <div class="dtag">Day 1–3</div>
         <div class="sn">02</div>
-        <h3>We finalize every detail together</h3>
-        <p>Your hours, services, photos, any tweaks. I handle all of it. You don't need to know anything about websites. That's literally my job.</p>
+        <h3>We make it yours.</h3>
+        <p>Hours, services, photos, any changes. You tell me what to fix, I fix it. That's the whole process.</p>
       </div>
       <div class="hw">
         <div class="dtag">Day 3–7</div>
         <div class="sn">03</div>
-        <h3>Live and showing up on Google</h3>
-        <p>Your site goes live at your own domain. Google Business Profile fully optimized. You get a text the moment it's up. New customers can find you that same day.</p>
+        <h3>You're live. New customers can find you the same day it goes up.</h3>
+        <p>Your site goes up at your own domain, Google Business Profile optimized. You get a text the moment it's live.</p>
       </div>
     </div>
   </div>
@@ -614,6 +614,19 @@ window.addEventListener('scroll',()=>{
   secs.forEach(s=>{if(scrollY>=s.offsetTop-150)cur=s.id});
   lks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'#F5A623':''});
 });
+function updateNavOffset(){
+  const banner=document.getElementById('summer-banner');
+  const nav=document.getElementById('nav');
+  if(!nav)return;
+  const h=banner&&banner.style.display!=='none'?banner.offsetHeight:0;
+  nav.style.top=h+'px';
+}
+function dismissBanner(){
+  document.getElementById('summer-banner').style.display='none';
+  updateNavOffset();
+}
+updateNavOffset();
+window.addEventListener('resize',updateNavOffset);
 </script>
 </body>
 </html>
